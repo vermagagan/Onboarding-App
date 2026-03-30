@@ -16,7 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UINavigationController(rootViewController: ViewController())
+        if UserDefaults.standard.string(forKey: "userName") != nil {
+            // onboarding already done → go straight to TabBarVC
+            window.rootViewController = TabBarVC()
+        } else {
+            // fresh install → show onboarding
+            window.rootViewController = LandingPageVC(
+                transitionStyle: .scroll,
+                navigationOrientation: .horizontal
+            )
+        }
         window.makeKeyAndVisible()
         self.window = window
     }

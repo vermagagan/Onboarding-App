@@ -1,13 +1,13 @@
 //
-//  DetailViewController.swift
+//  ProfileTabVC.swift
 //  dummyApp2
 //
-//  Created by Gagan Verma on 25/03/26.
+//  Created by Gagan Verma on 30/03/26.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class ProfileTabVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
