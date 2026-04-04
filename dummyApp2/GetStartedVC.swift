@@ -8,8 +8,6 @@
 import UIKit
 
 class GetStartedVC: UIViewController {
-    let headerColor = UIColor(white: 0.15, alpha: 1.0)
-    let subtitleColor = UIColor.systemGray
     
     let label = UILabel()
     let subheading = UILabel()
@@ -31,7 +29,7 @@ class GetStartedVC: UIViewController {
     
     func setupUI(){
         SFImage.image = UIImage(systemName: "checkmark.shield.fill")
-        SFImage.tintColor = .systemOrange
+        SFImage.tintColor = AppColors.primary
         SFImage.contentMode = .scaleAspectFill
         SFImage.backgroundColor = .systemBackground
         SFImage.clipsToBounds = true
@@ -39,7 +37,7 @@ class GetStartedVC: UIViewController {
         view.addSubview(SFImage)
         
         
-        label.textColor = headerColor
+        label.textColor = AppColors.header
         label.font = UIFont.systemFont(ofSize: 44, weight: .bold)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -47,8 +45,8 @@ class GetStartedVC: UIViewController {
         
         view.addSubview(label)
         
-        subheading.text = "Your Profile"
-        subheading.textColor = subtitleColor
+        subheading.text = "Your Profile is ready"
+        subheading.textColor = AppColors.subtitle
         subheading.font = UIFont.systemFont(ofSize: 18)
         subheading.textAlignment = .center
         subheading.numberOfLines = 0
@@ -56,7 +54,7 @@ class GetStartedVC: UIViewController {
         
         view.addSubview(subheading)
         
-        nextButton.backgroundColor = .systemOrange
+        nextButton.backgroundColor = AppColors.primary
         nextButton.setTitle("Get Started", for: .normal)
         nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         nextButton.setTitleColor(.white, for: .normal)
@@ -73,7 +71,7 @@ class GetStartedVC: UIViewController {
             label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             SFImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            SFImage.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 20),
+            SFImage.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20),
             SFImage.widthAnchor.constraint(equalToConstant: 240),
             SFImage.heightAnchor.constraint(equalToConstant: 240),
             

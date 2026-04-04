@@ -9,9 +9,7 @@ import UIKit
 
 class ProgressVC: UIViewController {
 
-    let headerColor = UIColor(white: 0.15, alpha: 1.0)
-    let subtitleColor = UIColor.systemGray
-    
+   
     let label = UILabel()
     let subheading = UILabel()
     let SFImage = UIImageView()
@@ -30,7 +28,7 @@ class ProgressVC: UIViewController {
     
     func setupUI(){
         SFImage.image = UIImage(systemName: "chart.xyaxis.line")
-        SFImage.tintColor = .systemOrange
+        SFImage.tintColor = AppColors.primary
         SFImage.contentMode = .scaleAspectFill
         SFImage.backgroundColor = .systemBackground
         SFImage.clipsToBounds = true
@@ -38,7 +36,7 @@ class ProgressVC: UIViewController {
         view.addSubview(SFImage)
         
         label.text = "Track Your Progress"
-        label.textColor = headerColor
+        label.textColor = AppColors.header
         label.font = UIFont.systemFont(ofSize: 44, weight: .bold)
         label.textAlignment = .center
         label.numberOfLines = 2
@@ -47,7 +45,7 @@ class ProgressVC: UIViewController {
         view.addSubview(label)
         
         subheading.text = "Log workout, monitor calories, hit your goals"
-        subheading.textColor = subtitleColor
+        subheading.textColor = AppColors.subtitle
         subheading.font = UIFont.systemFont(ofSize: 18)
         subheading.textAlignment = .center
         subheading.numberOfLines = 2
@@ -55,7 +53,7 @@ class ProgressVC: UIViewController {
         
         view.addSubview(subheading)
         
-        nextButton.backgroundColor = .systemOrange
+        nextButton.backgroundColor = AppColors.primary
         nextButton.setTitle("Next", for: .normal)
         nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         nextButton.setTitleColor(.white, for: .normal)
@@ -66,12 +64,10 @@ class ProgressVC: UIViewController {
         
         view.addSubview(nextButton)
         
-        let themeColor = UIColor(red: 0.88, green: 0.25, blue: 0.21, alpha: 1.0)
-        prevButton.setTitleColor(themeColor, for: .normal)
-        prevButton.backgroundColor = themeColor.withAlphaComponent(0.15)
+        prevButton.setTitleColor(AppColors.primary, for: .normal)
+        prevButton.backgroundColor = AppColors.primary.withAlphaComponent(0.15)
         prevButton.setTitle("Prev", for: .normal)
         prevButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        prevButton.setTitleColor(.systemOrange, for: .normal)
         prevButton.layer.cornerRadius = 10
         
         prevButton.addTarget(self, action: #selector(prevTapped), for: .touchUpInside)

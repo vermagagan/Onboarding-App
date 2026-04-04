@@ -68,6 +68,7 @@ class LandingPageVC: UIPageViewController {
             case let vc as NameVC:
                 vc.onNext = {[weak self] name in
                     UserDefaults.standard.set(name, forKey: "userName")
+                    UserDefaults.standard.set(Date(), forKey: "dateJoined")
                     
                     let getStarted = GetStartedVC()
                     getStarted.name = name

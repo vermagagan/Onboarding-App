@@ -9,9 +9,6 @@ import UIKit
 
 class NameVC: UIViewController, UITextFieldDelegate {
 
-    let headerColor = UIColor(white: 0.15, alpha: 1.0)
-    let subtitleColor = UIColor.systemGray
-    
     let label = UILabel()
     let textField = UITextField()
     let SFImage = UIImageView()
@@ -38,7 +35,7 @@ class NameVC: UIViewController, UITextFieldDelegate {
     
     func setupUI(){
         label.text = "What should we call you?"
-        label.textColor = headerColor
+        label.textColor = AppColors.header
         label.font = UIFont.systemFont(ofSize: 44, weight: .bold)
         label.textAlignment = .center
         label.numberOfLines = 2
@@ -53,15 +50,14 @@ class NameVC: UIViewController, UITextFieldDelegate {
         
         view.addSubview(textField)
         SFImage.image = UIImage(systemName: "person.circle")
-        SFImage.tintColor = .systemOrange
+        SFImage.tintColor = AppColors.primary
         SFImage.contentMode = .scaleAspectFill
-//        let themeColor = UIColor(red: 0.88, green: 0.25, blue: 0.21, alpha: 1.0)
         SFImage.backgroundColor = .systemBackground
         SFImage.clipsToBounds = true
         SFImage.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(SFImage)
         
-        nextButton.backgroundColor = .systemOrange
+        nextButton.backgroundColor = AppColors.primary
         nextButton.setTitle("Next", for: .normal)
         nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         nextButton.setTitleColor(.white, for: .normal)

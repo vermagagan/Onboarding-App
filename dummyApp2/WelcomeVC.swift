@@ -7,9 +7,6 @@
 
 import UIKit
 class WelcomeVC: UIViewController {
-    let headerColor = UIColor(white: 0.15, alpha: 1.0)
-    let subtitleColor = UIColor.systemGray
-    
     let label = UILabel()
     let subheading = UILabel()
     let SFImage = UIImageView()
@@ -36,7 +33,7 @@ class WelcomeVC: UIViewController {
     
     func setupUI(){
         SFImage.image = UIImage(systemName: "leaf.arrow.trianglehead.clockwise")
-        SFImage.tintColor = .systemOrange
+        SFImage.tintColor = AppColors.primary
         SFImage.contentMode = .scaleAspectFill
         SFImage.backgroundColor = .systemBackground
         SFImage.clipsToBounds = true
@@ -44,7 +41,7 @@ class WelcomeVC: UIViewController {
         view.addSubview(SFImage)
         
         label.text = "Welcome to FitLife"
-        label.textColor = headerColor
+        label.textColor = AppColors.header
         label.font = UIFont.systemFont(ofSize: 44, weight: .bold)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -53,7 +50,7 @@ class WelcomeVC: UIViewController {
         view.addSubview(label)
         
         subheading.text = "Your Personal Fitness Companion"
-        subheading.textColor = subtitleColor
+        subheading.textColor = AppColors.subtitle
         subheading.font = UIFont.systemFont(ofSize: 18)
         subheading.textAlignment = .center
         subheading.numberOfLines = 0
@@ -61,7 +58,7 @@ class WelcomeVC: UIViewController {
         
         view.addSubview(subheading)
         
-        nextButton.backgroundColor = .systemOrange
+        nextButton.backgroundColor = AppColors.primary
         nextButton.setTitle("Next", for: .normal)
         nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         nextButton.setTitleColor(.white, for: .normal)
